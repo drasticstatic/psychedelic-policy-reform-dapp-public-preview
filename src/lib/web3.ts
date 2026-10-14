@@ -40,6 +40,9 @@ export function walletSetup(): WalletSetup {
           icons: [`${DAPP}/favicon.png`],
         },
         features: { analytics: false },
+        // No Coinbase or Base Account SDKs (they're aliased out in next.config.ts, telemetry and all).
+        enableCoinbase: false,
+        enableBaseAccount: false,
         themeMode: themeNow(),
         themeVariables: { "--w3m-accent": accentNow(), "--w3m-font-family": "Public Sans, system-ui, sans-serif" },
       });
