@@ -1,0 +1,8 @@
+:HL["/psychedelic-policy-reform-dapp-public-preview/_next/static/css/4df51d82be90102f.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap","style"]
+:HL["https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css","style"]
+:HL["https://drasticstatic.github.io/psychedelic-policy-reform-astro-public/arrival/arrival.css","style"]
+:HL["https://drasticstatic.github.io/psychedelic-policy-reform-astro-public/arrival/org.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"pledge","h":64,"c":"$Q2"}]]
+0:{"b":"RSF5coVFypUKenH1wP-uW","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
