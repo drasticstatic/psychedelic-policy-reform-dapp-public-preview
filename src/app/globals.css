@@ -1,0 +1,541 @@
+/* Colors, type and the modes (Docket, Parchment, Capitol, Follow the day) come from the arrival kit's
+   org.css, loaded from the AstroLog, so this preview and the AstroLog always look like one suite.
+   This file is layout only. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4.75rem;
+  background-color: var(--background);
+  background-image: radial-gradient(ellipse at 85% -10%, color-mix(in srgb, var(--stone) 10%, transparent), transparent 55%),
+    radial-gradient(ellipse at -10% 110%, color-mix(in srgb, var(--leaf) 9%, transparent), transparent 50%),
+    repeating-linear-gradient(180deg, transparent 0 31px, color-mix(in srgb, var(--foreground) 3.5%, transparent) 31px 32px);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font: 400 1.0625rem/1.65 var(--font-body);
+}
+:root[data-contrast="more"] body,
+:root[data-reading="on"] body {
+  background-image: none;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h1,
+h2,
+h3,
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--heading);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+}
+.skip:focus {
+  top: 0.6rem;
+}
+
+/* ── the header: one row at every width (kit 1.2) ───────────────────────────────────────────── */
+.site-header {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 76rem;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+/* The kit's elements are created after hydration inside a host span; the span steps out of the
+   layout so <arrival-nav> and <arrival-controls> are the header's own flex items. */
+.kit-host {
+  display: contents;
+}
+.site-header arrival-controls {
+  flex: none;
+}
+.brand {
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  color: var(--heading);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand .mark {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.brand .mark .ks-face {
+  fill: var(--stone);
+  stroke: color-mix(in srgb, var(--stone) 70%, var(--background));
+}
+.brand .mark .ks-cut {
+  fill: var(--background);
+  stroke: var(--background);
+}
+.brand-title {
+  font-size: 1.05rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand-tag {
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid color-mix(in srgb, var(--stone) 55%, var(--border));
+  border-radius: 999px;
+  font: 600 0.68rem/1.5 var(--font-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--stone);
+  vertical-align: 0.15em;
+}
+@media (max-width: 520px) {
+  .site-header {
+    padding-inline: 1rem;
+  }
+  .brand-tag {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .brand-title {
+    display: none;
+  }
+}
+
+.preview-strip {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 0.45rem 1.25rem;
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+.preview-strip .ph {
+  color: var(--stone);
+  vertical-align: -0.12em;
+}
+
+/* ── page furniture ──────────────────────────────────────────────────────────────────────────── */
+.page {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+.page-wide {
+  max-width: 64rem;
+}
+.eyebrow {
+  margin: 0 0 0.4rem;
+  font: 700 0.78rem/1.4 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.page h1 {
+  font-size: clamp(2rem, 5.2vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.9rem;
+  text-wrap: balance;
+}
+.lede {
+  font-size: 1.12rem;
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+  max-width: 40rem;
+}
+.page h2 {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin: 2.5rem 0 0.8rem;
+}
+.page h3 {
+  font-size: 1.12rem;
+  margin: 0 0 0.35rem;
+}
+.page p {
+  margin: 0 0 1rem;
+}
+.page ul.plain {
+  padding-left: 1.2em;
+  margin: 0 0 1rem;
+}
+.page ul.plain li {
+  margin: 0.3rem 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font: 600 0.74rem/1.5 var(--font-body);
+  background: color-mix(in srgb, var(--leaf) 16%, transparent);
+  color: var(--foreground);
+  white-space: nowrap;
+}
+.badge.soon {
+  background: color-mix(in srgb, var(--muted) 16%, transparent);
+  color: var(--muted);
+}
+.badge.preview {
+  background: color-mix(in srgb, var(--stone) 20%, transparent);
+  color: var(--foreground);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.9rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  height: 100%;
+  padding: 1.05rem 1.1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  color: inherit;
+  text-decoration: none;
+}
+a.card:hover {
+  border-color: var(--accent);
+}
+.card.quiet {
+  border-style: dashed;
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.card-head .ph {
+  font-size: 1.5rem;
+  color: var(--stone);
+}
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  margin: 0;
+}
+.card p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  color: var(--foreground);
+  font: 600 0.95rem/1.2 var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: var(--accent);
+}
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+}
+
+/* "Not legal advice" and "preview" notes: one steady look wherever they appear. */
+.note {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 0 0 1.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--stone) 45%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--stone) 8%, var(--surface));
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+.note > .ph {
+  color: var(--stone);
+  font-size: 1.15rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+.note.leaf {
+  border-color: color-mix(in srgb, var(--leaf) 50%, var(--border));
+  background: color-mix(in srgb, var(--leaf) 9%, var(--surface));
+}
+.note.leaf > .ph {
+  color: var(--leaf);
+}
+
+.hero {
+  text-align: center;
+  padding-top: 1rem;
+}
+.hero h1 {
+  margin-top: 0.75rem;
+}
+.hero .lede {
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero .actions {
+  justify-content: center;
+}
+
+.kit-block {
+  display: block;
+  margin: 0 0 1.25rem;
+}
+.kit-block .kit-host {
+  display: block;
+}
+
+/* ── the kit's footer groups, and the dock ──────────────────────────────────────────────────── */
+.page-foot {
+  width: 100%;
+  max-width: 64rem;
+  margin: 2rem auto 0;
+  padding: 2rem 1.25rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.page-foot arrival-footer {
+  display: block;
+  padding: 1.25rem 1.25rem 1rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+.dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  padding: 0.65rem 1.25rem;
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.dock-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: safe center;
+  align-items: center;
+  gap: 0.2rem 1.1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+.dock-inner::-webkit-scrollbar {
+  display: none;
+}
+.dock-inner > * {
+  flex: none;
+}
+.dock-inner a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.dock-inner a:hover {
+  color: var(--accent);
+}
+.dock-brand {
+  font-family: var(--font-heading);
+  color: var(--heading);
+}
+@media (max-width: 520px) {
+  .dock-inner .long {
+    display: none;
+  }
+}
+
+/* ── the pledge ──────────────────────────────────────────────────────────────────────────────── */
+.pledge-text {
+  margin: 0 0 1.5rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--stone);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.9rem 1rem 0.9rem 3.1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  margin: 0 0 0.6rem;
+}
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 1rem;
+  top: 0.95rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 0.8rem/1 var(--font-body);
+  background: var(--stone);
+  color: var(--background);
+}
+.steps > li.done::before {
+  content: "✓";
+  background: var(--leaf);
+}
+.steps h3 {
+  margin: 0 0 0.3rem;
+}
+.steps p {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.status {
+  font-size: 0.93rem;
+  margin: 0.25rem 0 0;
+}
+.status.ok {
+  color: var(--leaf);
+}
+.status.warn {
+  color: var(--stone);
+}
+
+.faq details {
+  margin: 0 0 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 1rem;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+}
+.faq details[open] {
+  padding-bottom: 0.9rem;
+}
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary .ph-caret-right {
+  transition: transform 0.15s ease;
+}
+.faq details[open] summary .ph-caret-right {
+  transform: rotate(90deg);
+}
+.faq details p {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+
+table.who {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 0 0 1rem;
+}
+table.who th,
+table.who td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
