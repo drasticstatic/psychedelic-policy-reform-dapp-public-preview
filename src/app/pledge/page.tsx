@@ -29,6 +29,23 @@ export default function Pledge() {
 
       <PledgeLoader />
 
+      <h2>Beyond a signed pledge</h2>
+      <ul className="cards">
+        <li>
+          <div className="card quiet">
+            <span className="card-head">
+              <i className="ph ph-hand-heart" aria-hidden="true"></i>
+              <span className="badge soon">Sneak peek</span>
+            </span>
+            <h3>Tokens of gratitude</h3>
+            <p>
+              Later, a pledge could lead to a deeper, optional commitment: a soulbound token of gratitude, from Christopher W&rsquo;s gratitude-token project. It would stay in the wallet it&rsquo;s given to, and couldn&rsquo;t be sold, sent on or traded. It isn&rsquo;t money and it isn&rsquo;t a vote: it&rsquo;s a thank-you, and a sign of commitment you choose to carry.
+            </p>
+            <p>Still being tested. No dates, and nothing to claim yet.</p>
+          </div>
+        </li>
+      </ul>
+
       <h2>Questions</h2>
       <div className="faq">
         <details>

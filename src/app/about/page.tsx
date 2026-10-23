@@ -28,12 +28,22 @@ export default function About() {
       </ul>
       <p>It&rsquo;s a policy and evidence lane. It doesn&rsquo;t tell anyone&rsquo;s personal story, and it can&rsquo;t give legal advice.</p>
 
-      <h2>Who it&rsquo;s meant to serve</h2>
+      <h2>Where it started</h2>
       <p>
-        Four communities are in its circle: Psychedelics In Recovery&trade; (PIR&reg;), Psanctuary, ORG (the Octagon Religious-Research Group) and The Holy Earth Foundation. The <a href={`${LOG}/roadmap`}>roadmap</a> describes each one in its own public words, and what this work can offer it.
+        The spark was Kevin M&rsquo;s &ldquo;Roadmap to Reform&rdquo; masterclass: a program on changing psychedelic laws through real-world policy work, from the advocate behind Decriminalize Denver, the 2019 campaign that made Denver the first US city to decriminalize psilocybin mushrooms. It inspired Christopher W to bring this work home to Pennsylvania.
+      </p>
+
+      <h2>The communities at its heart</h2>
+      <p>
+        Four life-changing healing communities are at its heart: Psychedelics In Recovery&trade; (PIR&reg;), Psanctuary, ORG (the Octagon Religious-Research Group) and The Holy Earth Foundation. This initiative wants to see their work protected, and blessing Pennsylvania. The <a href={`${LOG}/roadmap`}>roadmap</a> describes each one in its own public words, and what this work can offer it.
       </p>
       <p>
-        Naming a community describes who this work hopes to help. It doesn&rsquo;t mean that community has endorsed the initiative or taken a position on it, and nothing here speaks for any of them.
+        Naming a community, or the masterclass that inspired this work, describes who this work hopes to help and where it came from. It doesn&rsquo;t mean any of them has endorsed the initiative or taken a position on it, and nothing here speaks for any of them. PIR&reg;, as a 12-step fellowship, keeps to its own traditions.
+      </p>
+
+      <h2>Where people gather</h2>
+      <p>
+        For now, the conversation happens in Facebook groups in Pennsylvania: two that Christopher W manages, Pennsylvania Psychedelic Reform and Pennsylvania RFRA, and two related NORML groups. They&rsquo;re all in the <a href={`${LOG}/#community`} data-arrival-open="community">Community window</a>.
       </p>
 
       <h2>Partners</h2>
