@@ -3,9 +3,14 @@
 import { createAppKit } from "@reown/appkit/react";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 import { mainnet } from "@reown/appkit/networks";
-import { createConfig, http, type Config } from "wagmi";
+import { createConfig, createStorage, http, noopStorage, type Config } from "wagmi";
 import { injected } from "wagmi/connectors";
 import { DAPP, NAME } from "./site";
+
+// "Doesn't keep it": wagmi normally saves the last connection (wagmi.store, wagmi.recentConnectorId…)
+// to localStorage so it can reconnect on the next visit. A no-op storage keeps that in memory only, so
+// a reload forgets the wallet, as the page promises. Both paths below use it.
+const forgetful = createStorage({ storage: noopStorage });
 
 // Wallet connect through Reown AppKit: one button for browser wallets, phone wallets (by QR code) and
 // email sign-in. It needs a Reown project ID (NEXT_PUBLIC_REOWN_PROJECT_ID, set as a repository
@@ -28,7 +33,7 @@ export function walletSetup(): WalletSetup {
   if (setup) return setup;
   if (HAS_PROJECT_ID) {
     try {
-      const adapter = new WagmiAdapter({ networks: [mainnet], projectId: PROJECT_ID, ssr: false });
+      const adapter = new WagmiAdapter({ networks: [mainnet], projectId: PROJECT_ID, ssr: false, storage: forgetful });
       const modal = createAppKit({
         adapters: [adapter],
         networks: [mainnet],
@@ -58,7 +63,7 @@ export function walletSetup(): WalletSetup {
     }
   }
   setup = {
-    config: createConfig({ chains: [mainnet], connectors: [injected()], transports: { [mainnet.id]: http() }, ssr: false }),
+    config: createConfig({ chains: [mainnet], connectors: [injected()], transports: { [mainnet.id]: http() }, ssr: false, storage: forgetful }),
     appkit: false,
     modal: null,
   };
