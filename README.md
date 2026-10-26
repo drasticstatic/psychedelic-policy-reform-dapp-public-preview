@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/brand/readme-banner-dark.svg">
+  <img alt="Psychedelic Policy Reform. Religious freedom for sincere sacramental practice, seen from Pennsylvania: a quiet docket page breathing behind a stone arch with a glowing golden keystone." src="public/brand/readme-banner-light.svg" width="100%">
+</picture>
+
 # Psychedelic Policy Reform · dApp preview
 
 > The interactive side of an RFRA-based psychedelic policy reform initiative, seen from Pennsylvania:
@@ -34,7 +39,7 @@ A Next.js preview of the initiative's interactive side:
 
 ## 🌗 One suite with the AstroLog
 
-The preview loads the **arrival kit** (v1.2.1) from the AstroLog by absolute URL
+The preview loads the **arrival kit** (v1.5.1, English first with Español one tap away) from the AstroLog by absolute URL
 (`https://drasticstatic.github.io/psychedelic-policy-reform-astro-public/arrival/`): the one-row navbar
 with its More and Menu folds, the contact and community windows, reading mode, what's new, `/` search
 and the welcome guide. Light and motion choices carry between the two sites. Every page's share card
