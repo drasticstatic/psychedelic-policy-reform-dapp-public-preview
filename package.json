@@ -13,13 +13,13 @@
   "dependencies": {
     "@reown/appkit": "1.8.24",
     "@reown/appkit-adapter-wagmi": "1.8.24",
-    "@tanstack/react-query": "^5.104.2",
+    "@tanstack/react-query": "^5.104.5",
     "@wagmi/connectors": "^6.2.0",
     "@wagmi/core": "^2.22.1",
     "next": "16.4.3",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
-    "viem": "^2.57.5",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "viem": "^2.57.10",
     "wagmi": "^2.19.5"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "typescript": "^5",
-    "webpack": "^5.111.0"
+    "webpack": "^5.112.1"
   },
   "overrides": {
     "ws": "^8.21.0",
