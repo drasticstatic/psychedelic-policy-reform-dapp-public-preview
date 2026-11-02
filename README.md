@@ -1,20 +1,28 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="public/brand/readme-banner-dark.svg">
-  <img alt="Psychedelic Policy Reform. Religious freedom for sincere sacramental practice, seen from Pennsylvania: a quiet docket page behind a stone arch, where light travels the stones, each catching it in turn, to a glowing golden keystone." src="public/brand/readme-banner-light.svg" width="100%">
-</picture>
+<!-- readme-standard: 2026-11-02 -->
+<div align="center">
+
+<img src="public/brand/banner.svg" width="100%" alt="Psychedelic Policy Reform dApp preview: a road of six stops, one for each page a visitor walks through.">
 
 # Psychedelic Policy Reform · dApp preview
 
-> The interactive side of an RFRA-based psychedelic policy reform initiative, seen from Pennsylvania:
-> the evidence library's shelves, a pledge you can try with a wallet signature, and updates.
+*The interactive side of an RFRA-based psychedelic policy reform initiative, seen from Pennsylvania: the evidence library's shelves, a pledge you can try with a wallet signature, and updates.*
 
+![For](https://img.shields.io/badge/For-Anyone_following_the_initiative-64748b?style=flat-square)
 [![License: MIT](https://img.shields.io/badge/code-MIT-lightgrey?style=flat)](https://github.com/drasticstatic/psychedelic-policy-reform-dapp-public-preview/blob/main/LICENSE)
 [![Content: CC BY-SA 4.0](https://img.shields.io/badge/words-CC%20BY--SA%204.0-lightgrey?style=flat)](https://github.com/drasticstatic/psychedelic-policy-reform-dapp-public-preview/blob/main/LICENSE-CONTENT)
 [![Public Preview](https://img.shields.io/badge/%F0%9F%A7%AA%20dApp-preview-E0B65E)](https://drasticstatic.github.io/psychedelic-policy-reform-dapp-public-preview/)
 [![AstroLog](https://img.shields.io/badge/%F0%9F%93%9C%20AstroLog-live-84D1A5)](https://drasticstatic.github.io/psychedelic-policy-reform-astro-public/)
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code%20CLI-blueviolet)](https://code.claude.com/docs/en/overview)
 
----
+<img src="public/brand/icons/map-pin.svg" width="16" height="16" alt=""> **You are here:** drasticstatic lab › `psychedelic-policy-reform-dapp` · private source · `main` is the working branch · public twin `psychedelic-policy-reform-dapp-public-preview`
+
+</div>
+
+## <img src="public/brand/icons/compass.svg" width="24" height="24" alt=""> TL;DR
+
+1. <img src="public/brand/icons/sprout.svg" width="16" height="16" alt=""> **What this is.** The source of the dApp preview: a Next.js static export. The pledge is a preview and records nothing.
+2. <img src="public/brand/icons/users-round.svg" width="16" height="16" alt=""> **Who it is for.** Visitors who want to try the interactive side of the initiative.
+3. <img src="public/brand/icons/footprints.svg" width="16" height="16" alt=""> **Do this first.** [Open the preview](https://drasticstatic.github.io/psychedelic-policy-reform-dapp-public-preview/).
 
 **🧪 [Open the preview →](https://drasticstatic.github.io/psychedelic-policy-reform-dapp-public-preview/)** ·
 **📜 [The AstroLog →](https://drasticstatic.github.io/psychedelic-policy-reform-astro-public/)** (the initiative's open record)
@@ -87,3 +95,9 @@ Requires Node.js `>=22.12.0`. The kit and share cards load from the live AstroLo
 ---
 
 *Kept by Christopher W ([drasticstatic](https://github.com/drasticstatic)) with Alfred, using Anthropic's Claude Code CLI.*
+
+## <img src="public/brand/icons/git-pull-request.svg" width="24" height="24" alt=""> Suggest a change
+
+Noticed something? Open an [issue](../../issues) or a pull request against `main`; Christopher reads them and a person with the role merges. Not on GitHub? Reach Christopher through [his contact page](https://drasticstatic.github.io/resume/pages/contact.html).
+
+<sub>The front door follows the living [README standard](https://github.com/drasticstatic/my-template/blob/main/README-STANDARD.md). Copy it, improve it.</sub>
